@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Getir";
+    Layout = "~/Views/Shared/templateLayout.cshtml";
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="modal-body">
+                        @foreach (var x in ViewBag.modal)
+                        {
+                            <h2 class="text-uppercase">@x.YaziAdi</h2>
+
+                            <img class="img-fluid d-block mx-auto" src="@x.resmi" alt="..." />
+                            <p>@x.aciklama</p>
+                        }
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

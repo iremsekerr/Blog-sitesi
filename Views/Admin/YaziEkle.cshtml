@@ -1,0 +1,38 @@
+﻿@model webproject.Models.YaziTuru
+
+@{
+    ViewData["Title"] = "YaziEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>YAZI EKLE</strong>
+            </div>
+            <div class="card-body card-block">
+                <form asp-controller="Admin" asp-action="YaziEkle" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <label><strong>YAZI ADI</strong></label>
+                    <input type="text" class="form-control" name="YaziAdi" />
+                    <br />
+
+                    <br />
+                    <label><strong>AÇIKLAMA</strong></label>
+                    <input type="text" class="form-control" name="aciklama" /><br />
+                    <label><strong>TÜRÜ</strong></label>
+                    <input type="text" class="form-control" name="Yazıid" /><br />
+                    <br />
+
+                    <br />
+                    <label><strong>RESMİ</strong></label><br />
+                    <input type="file" name="resmi" class="form-control" />
+                    <br />
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i>YAZI EKLE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

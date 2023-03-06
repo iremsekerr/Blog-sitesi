@@ -1,0 +1,54 @@
+﻿@using webproject.Models
+@model List<Yazı>
+@{
+    ViewData["Title"] = "YaziList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <!-- DATA TABLE -->
+        <h3 class="title-5 m-b-35"> <strong>YAZILAR</strong></h3>
+    </div>
+
+    <div class="table-responsive table-responsive-data2">
+        <table class="table table-data2">
+            <thead>
+                <tr>
+
+                    <th><strong>YAZI ID</strong></th>
+                    <th><strong>YAZI ADI</strong></th>
+                    
+                    <th><strong>RESMİ </strong></th>
+                    <th><strong>AÇIKLAMA </strong></th>
+                    
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    <tr class="tr-shadow">
+                        <td>@x.Yid</td>
+                        <td>@x.YaziAdi</td>
+
+                        <td><img src="@x.resmi" alt="Alternate Text" width="100px" height="90px" /></td>
+                        <td>@x.aciklama</td>
+                        <td>@x.YazıTuru.adi</td>
+
+                        <td>
+                            <div class="table-data-feature">
+                                <a href="/Admin/YaziSil/@x.Yid">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
+</div>
+
